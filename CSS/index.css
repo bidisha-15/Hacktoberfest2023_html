@@ -66,9 +66,9 @@ li{
 
 /* Navbar Section */
 .navbar {
-    width: 80%;
+    width: 90%;
     background-color: #007BFF;
-    padding: 10px;
+    padding: 0px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -94,6 +94,7 @@ li{
 
 .navbar-list-item {
     font-size: 18px;
+    margin-top: 12px;
     padding: 10px 20px;
     cursor: pointer;
     color: #fff;  
@@ -109,22 +110,19 @@ li{
     color: #fff; /* Change link color to white because the old color was not visible enough */
     /* transition: color 0.3s; */ /* Is not needed since the parent (.navbar-list-item) has transition */
 }
-
-
-
 .navbar a {
     text-decoration: none;
     color: #fff;
 }
-
-
 /* Additional styles for the "Contributors" link
 .navbar-list-item a {
     color: inherit;
 } */
 
 .navbar-list-item:hover a{
-    font-weight: bold; /* Change link weight to bold because the orange was not visible enough */
+    font-weight:530; /* Change link weight to 530 because the orange was not visible enough */
+    color: white; /*changed color to white cuz the letters were getting invisible due tothe blue on hover */
+    text-decoration: underline;
 }
 
 /* Hamburger menu icon */
@@ -152,26 +150,35 @@ li{
 .card .img-sec img {
     border-radius: 50%;
 }
-
-
-
 /* Body Section */
 
 .code-img img {
-    width: 13rem;
-    height: 13rem;
+    width: 30rem;
+    height: 30rem;
     margin: 0 auto;
 }
+.explore-btn{
+    margin: 20px 0px;
+    height: 50px;
+    width: 300px;
+    font-size: 20px;
+    font-family: 'Gabarito', cursive;
+    cursor: pointer;
+    transition: 0.2s;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
 
-.container-1{
-    height: 100vh;
-    width: 100%;
-    margin-top: 1rem; /* Some margin top to avoid the navbar */
-    background-color: rgb(255, 255, 255);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.explore-btn:hover {
+    width: 320px;
+    background-color: #0056b3;
+    color: #fff;
+   
 }
 
 .main-logo {
@@ -181,40 +188,21 @@ li{
     margin: 0 auto 0px auto;
     max-width: 600px;
 }
-
-.explore-btn{
-    margin: 40px 0px;
-    height: 50px;
-    width: 300px;
-    border: 1px solid black;
-    font-size: 20px;
-    font-family: 'Gabarito', cursive;
-    background-color: transparent;
-    cursor: pointer;
-    transition: 0.2s;
-}
-
-.explore-btn:hover {
-    width: 320px;
-}
-
-
 /* Contributors Section */
-
-.container-2 {
-    width: 100%;
+.contributors{
+    margin: 0 auto;
+    margin-left: 357px;
+}
+.contributors-inner{
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    flex-wrap: wrap;
-    overflow: hidden;
+    flex-direction: row;
+    overflow: scroll;
 }
 
-#contri {
-    margin: 30px 0px;
-    font-size: 40px;
+.con-text{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 30px;
 }
-
 .hack {
     font-size: 60px;
     font-family: 'Teko', sans-serif;
@@ -227,9 +215,8 @@ li{
     justify-content: center;
     align-items: center;
     width: 85%;
-    margin: 20px 0px;
-    overflow: hidden;
-
+    margin: 15px 0px;
+    overflow: scroll;
 }
 
 .people {
@@ -251,25 +238,24 @@ li{
     justify-content: center;
     align-items: center;
 }
-
+    
 .info {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    color: black;
 }
-
+.info:hover{
+    color: #0074E4;
+    text-decoration: none;
+}
 .label {
     margin: 5px 0px;
     font-size: 25px;
     font-family: 'Gabarito', cursive;
 }
 
-.desc {
-    margin: 5px 0px;
-    font-size: 18px;
-    font-family: 'Lato', regular;
-}
 
 /* Footer Section */
 
@@ -319,27 +305,6 @@ li{
     margin: 0px 10px;
 }
 
-/* Efek Hover untuk Tombol Explore */
-.explore-btn {
-    background-color: #007BFF;
-    /* Warna latar belakang saat normal */
-    color: #fff;
-    /* Warna teks saat normal */
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s, color 0.3s;
-    /* Efek transisi selama 0.3 detik */
-}
-
-.explore-btn:hover {
-    background-color: #0056b3;
-    /* Warna latar belakang saat dihover */
-    color: #fff;
-    /* Warna teks saat dihover (bisa disamakan dengan warna saat normal) */
-}
-
 /* Animasi Fade-in */
 @keyframes fade-in {
     from {
@@ -368,17 +333,6 @@ li{
     /* Efek transisi */
 }
 
-/* Efek Hover pada Label */
-.card:hover .label {
-    color: #007BFF;
-    /* Ganti warna label saat dihover */
-}
-
-/* Efek Hover pada Github Icon */
-.card:hover .github img {
-    filter: grayscale(0);
-    /* Hilangkan efek grayscale pada gambar saat dihover */
-}
 
 /* Mobile navigation styles */
 .navbar-list.active {
@@ -460,9 +414,33 @@ a{
     }
 
     .explore-btn {
-        width: 100%; /* Make the Explore button full width */
+        width: 180px; /* Make the Explore button full width */
     }
-
+.explore-btn:hover{
+    width: 200px;
+}
+#contri {
+    margin: 0 auto;
+    margin-left:125px;
+    font-size: 20px;
+    justify-content: center;
+    display: inline-block;
+}
+.contributors{
+    margin: 0 auto;
+    margin-left: 125px;
+}
+.con-text{
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-size: 25px;
+}
+hr{
+    width: 100%;
+}
+.hack{
+    font-size: 35px;
+    font-family: 'Teko', sans-serif;
+}
     .container-2 {
         padding: 20px; /* Add padding to contributors section */
     }
@@ -499,9 +477,6 @@ a{
         max-width: 250px; /* Further limit card width */
     }
 }
-
-
-
 
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900);
 .contact-form {
@@ -625,33 +600,11 @@ h1 small {
   color: #ff7c62;
 }
 
-.made-with-love {
-  margin-top: 40px;
-  padding: 10px;
-  clear: left;
-  text-align: center;
-  font-size: 10px;
-  font-family: arial;
-  color: #fff;
-}
-.made-with-love i {
-  font-style: normal;
-  color: #f50057;
-  font-size: 14px;
-  position: relative;
-  top: 2px;
-}
-.made-with-love a {
-  color: #fff;
-  text-decoration: none;
-}
-.made-with-love a:hover {
-  text-decoration: underline;
-}
-
 #btn4{
     background-color: #007BFF;
     color: white;
+    width: 200px;
+    margin-left: 289px;
 }
 
 #btn4:hover{
@@ -726,4 +679,8 @@ h1 small {
     100% {
      transform: rotate(45deg) rotateX(-385deg) rotateY(385deg);
     }
+   }
+   #contri-1{
+    width: 100%;
+    margin: 15px;
    }
